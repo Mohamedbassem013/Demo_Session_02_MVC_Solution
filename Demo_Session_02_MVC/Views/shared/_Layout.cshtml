@@ -1,0 +1,60 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    @*Start Header*@
+    @*HTML Tags*@
+   @*   <center>
+        <div class="mt-5">
+            <a href="/Home/Index" class="btn btn-danger">Home</a>
+            <a href="/Home/AboutUs" class="btn btn-primary">About Us</a>
+            <a href="/Home/ContcatUs" class="btn btn-success">Contcat Us</a>
+            <a href="/Home/Privacy" class="btn btn-warning">Privacy</a>
+        </div>
+    </center>  *@
+    @*End Header*@
+
+    <!------------------------------------------------------------------->
+    @*HTML Helper*@
+
+   @*   <center>
+        <div class="mt-5">
+            @Html.ActionLink("Home"      , "Index"     , "Home" , null ,new { @class = "btn btn-primary" })
+            @Html.ActionLink("AboutUs"   , "AboutUs"   , "Home" , null , new { @class = "btn btn-danger"})
+            @Html.ActionLink("ContcatUs" , "ContcatUs" , "Home" , null , new { @class = "btn btn-success" })
+            @Html.ActionLink("Privacy"   , "Privacy"   , "Home" , null , new { @class = "btn btn-warning" })
+        </div>
+    </center>  *@
+
+
+    <!------------------------------------------------------------------->
+     @*Tags Helper (Most Commend Used (Recommended))*@
+      <center>
+        <div class="mt-5"> 
+            <a asp-controller ="Home" asp-action="Index" class="btn btn-danger">Home</a>
+            <a asp-Controller="Home" asp-action="AboutUs" class="btn btn-primary">About Us</a>
+            <a asp-Controller="Home" asp-action="ContcatUs" class="btn btn-success">Contcat Us</a>
+            <a asp-Controller="Home" asp-action="Privacy" class="btn btn-warning">Privacy</a>
+        </div>
+    </center>  
+    @*End Helper*@
+    <div class ="bg-success">
+        @RenderBody()
+    </div>
+
+    @*Start Footer*@
+    <center>
+        <div class="mt-5">
+            <p>Copyright &copy; Route @DateTime.Now.Year</p>
+        </div>
+    </center>
+    @*End Footer*@
+</body>
+</html>
